@@ -1,0 +1,157 @@
+/* ===== Tema preto e amarelo (por cima do Bootstrap) ===== */
+
+/* 1. Cores guardadas em variáveis: para trocar uma cor, muda só aqui */
+:root {
+  --fundo: #0d0d0d;
+  --cartao: #151515;
+  --campo: #1c1c1c;
+  --amarelo: #ffd400;
+  --amarelo-escuro: #c9a700;
+  --texto: #e6e6e6;
+  --texto-suave: #8f8f8f;
+  --borda: #2e2e2e;
+}
+
+/* 2. Página */
+html {
+  scroll-behavior: smooth;      /* rolagem suave ao clicar no menu */
+  scroll-padding-top: 4rem;     /* evita o título ficar escondido atrás do menu */
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Fira Code", Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+a { color: var(--amarelo); }
+
+/* 3. Navbar (menu do topo) */
+.navbar {
+  position: sticky;             /* o menu acompanha a rolagem */
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #000;
+  border-bottom: 2px solid var(--amarelo);
+  --bs-navbar-color: var(--texto-suave);
+  --bs-navbar-hover-color: var(--amarelo);
+}
+.navbar-nav { flex-wrap: wrap; align-items: center; }
+
+/* 4. Botões (todo elemento com class="btn") */
+.btn {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--amarelo);
+  --bs-btn-border-color: var(--amarelo);
+  --bs-btn-hover-color: var(--amarelo);
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-hover-border-color: var(--amarelo);
+  --bs-btn-active-color: var(--amarelo);
+  --bs-btn-active-bg: transparent;
+  --bs-btn-active-border-color: var(--amarelo);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 5. Topo da página (hero) */
+header { padding: 2rem 0 1rem; }
+
+header img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--amarelo);
+  border-radius: 50%;
+}
+
+h1 { color: var(--amarelo); }
+
+/* 6. Seções: cada <section> vira um cartão com borda amarela à esquerda */
+main { padding-top: 1rem; }
+
+section {
+  background: var(--cartao);
+  padding: 24px;
+  margin-bottom: 28px;
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--amarelo);
+  border-radius: 6px;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  padding-bottom: 6px;
+  color: var(--amarelo);
+  font-size: 1.2rem;
+  border-bottom: 1px dashed var(--amarelo-escuro);
+}
+h2::before { content: "// "; color: var(--texto-suave); }
+
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  color: var(--amarelo);
+}
+
+/* 7. Habilidades: cada item vira uma "etiqueta" */
+#habilidades li span {
+  display: block;
+  padding: 6px;
+  text-align: center;
+  color: var(--amarelo);
+  background: var(--campo);
+  border: 1px solid var(--amarelo-escuro);
+  border-radius: 4px;
+}
+
+/* 8. Cards dos projetos (.card é do Bootstrap) */
+.card {
+  --bs-card-bg: var(--campo);
+  --bs-card-color: var(--texto);
+  --bs-card-border-color: var(--amarelo-escuro);
+}
+.card h3 { margin-top: 0; }
+.card .btn { margin-top: auto; align-self: flex-start; }   /* botão sempre embaixo */
+
+/* 9. Formulário */
+.form-label { margin-top: 1rem; }
+
+.form-control {
+  background: var(--campo);
+  color: var(--amarelo);
+  border-color: var(--borda);
+}
+.form-control:focus {
+  background: var(--campo);
+  color: var(--amarelo);
+  border-color: var(--amarelo);
+  box-shadow: 0 0 0 2px rgba(255, 212, 0, 0.25);
+}
+
+form .btn { margin-top: 1.5rem; }
+
+#mensagem-enviada {
+  margin-top: 1rem;
+  color: var(--amarelo);
+}
+
+/* 10. Rodapé */
+footer {
+  padding: 20px;
+  color: var(--texto-suave);
+}
+
+/* 11. Tema escuro: a classe "escuro" é colocada no <body> pelo JavaScript */
+body.escuro {
+  --fundo: #000;
+  --cartao: #050505;
+  --campo: #0a0a0a;
+  --borda: #3a3200;
+}
+body.escuro section {
+  box-shadow: 0 0 18px rgba(255, 212, 0, 0.12);
+}
